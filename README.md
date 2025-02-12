@@ -17,15 +17,15 @@ docker-compose ps
 
 # Para ver qual é o primary:
 
-docker exec -it <nome-replica-healthy> mongosh --eval "rs.status()"
+docker exec -it *nome-replica-healthy* mongosh --eval "rs.status()"
 
 # Para matar o primary:
 
-docker stop <nome-primary>
+docker stop *nome-primary*
 
 # Para ver qual a nova configuração do replica set:
 
-docker exec -it <nome-replica-healthy> mongosh --eval "rs.status()"
+docker exec -it *nome-replica-healthy* mongosh --eval "rs.status()"
 
 # Para testar a consistência
 
@@ -60,7 +60,8 @@ curl -X POST http://localhost:5000/data/secondary2 \
 # Para conferência
 
 curl http://localhost:5000/replica-status
-curl http://localhost:5000/is-primary/<nome-da-replica>
+
+curl http://localhost:5000/is-primary/*nome-da-replica*
 
 # IMPORTANTE
 
