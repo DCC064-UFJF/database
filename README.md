@@ -9,7 +9,7 @@ docker-compose up -d --build
 
 # Para parar:
 
-docker-compose down ou docker stop
+docker-compose down ou docker stop $(docker ps -q)
 
 # Para verificar o que está rodando:
 
